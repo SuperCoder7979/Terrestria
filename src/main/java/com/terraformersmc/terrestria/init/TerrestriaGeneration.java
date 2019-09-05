@@ -29,6 +29,7 @@ public class TerrestriaGeneration {
 		addContinentalBiome(REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1.0, "redwood_forest", config);
 		addContinentalBiome(SAKURA_FOREST, OverworldClimate.TEMPERATE, 1.0, "sakura_forest", config);
 		addContinentalBiome(SNOWY_HEMLOCK_FOREST, OverworldClimate.SNOWY, 2.0, "snowy_hemlock_forest", config);
+		addContinentalBiome(MIXED_FOREST, OverworldClimate.TEMPERATE, 20, "mixed_forest", config);
 		addBiomeVariant(Biomes.DEEP_OCEAN, VOLCANIC_ISLAND_SHORE, 0.10, "volcanic_island", config);
 
 		if(CALDERA_RIDGE != null) {
@@ -40,6 +41,20 @@ public class TerrestriaGeneration {
 			OverworldBiomes.setRiverBiome(CALDERA, null);
 			OverworldBiomes.setRiverBiome(CALDERA_BEACH, null);
 			OverworldBiomes.setRiverBiome(CALDERA_RIDGE, null);
+		}
+
+		if (MIXED_FOREST != null) {
+			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_LAKE, 0.75);
+			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_HILLS, 1.5);
+			OverworldBiomes.addEdgeBiome(MIXED_FOREST, MIXED_FOREST_EDGE, 1.0);
+
+			OverworldBiomes.addShoreBiome(MIXED_FOREST, MIXED_FOREST_BEACH, 1.0);
+			OverworldBiomes.addShoreBiome(MIXED_FOREST_LAKE, MIXED_FOREST_BEACH, 1.0);
+			OverworldBiomes.addShoreBiome(MIXED_FOREST_HILLS, MIXED_FOREST_BEACH, 1.0);
+			OverworldBiomes.addShoreBiome(MIXED_FOREST_EDGE, MIXED_FOREST_BEACH, 1.0);
+
+			FabricBiomes.addSpawnBiome(MIXED_FOREST);
 		}
 
 		if(CYPRESS_FOREST != null) {

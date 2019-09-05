@@ -41,6 +41,13 @@ public class TerrestriaBiomes {
 	public static Biome WOODED_JAPANESE_MAPLE_HILLS;
 	public static Biome WOODED_SAKURA_HILLS;
 
+	public static Biome MIXED_FOREST;
+	public static Biome MIXED_FOREST_CLEARING;
+	public static Biome MIXED_FOREST_LAKE;
+	public static Biome MIXED_FOREST_HILLS;
+	public static Biome MIXED_FOREST_EDGE;
+	public static Biome MIXED_FOREST_BEACH;
+
 	public static void init() {
 
 		CalderaBiomes.register();
@@ -55,6 +62,7 @@ public class TerrestriaBiomes {
 		SnowyHemlockRainforestBiomes.register();
 		JapaneseMapleForestBiomes.register();
 		VolcanicIslandBiomes.register();
+		MixedForestBiomes.register();
 
 		TerrestriaFeatures.addVolcanoStarts(
 				VOLCANIC_ISLAND,

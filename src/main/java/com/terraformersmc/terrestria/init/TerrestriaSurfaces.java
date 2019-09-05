@@ -5,6 +5,7 @@ import com.terraformersmc.terraform.surface.BeachSurfaceBuilder;
 import com.terraformersmc.terraform.surface.CliffSurfaceBuilder;
 import com.terraformersmc.terraform.surface.CliffSurfaceConfig;
 import com.terraformersmc.terraform.surface.FloodingBeachSurfaceBuilder;
+import com.terraformersmc.terrestria.surface.MixedForestSurfaceBuilder;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -19,6 +20,7 @@ public class TerrestriaSurfaces {
 	public static BeachSurfaceBuilder BASALT_BEACH;
 	public static BeachSurfaceBuilder BEACH;
 	public static CliffSurfaceBuilder CLIFF;
+	public static MixedForestSurfaceBuilder MIXED_FOREST;
 	public static CliffSurfaceConfig BASALT_CONFIG;
 	public static TernarySurfaceConfig ALPS_CONFIG;
 
@@ -34,6 +36,8 @@ public class TerrestriaSurfaces {
 		BEACH = register("beach", new BeachSurfaceBuilder(TernarySurfaceConfig::deserialize, 62, v -> Blocks.SAND.getDefaultState()));
 
 		CLIFF = register("cliff", new CliffSurfaceBuilder(CliffSurfaceConfig::deserialize, 62, BASALT_BEACH));
+
+		MIXED_FOREST = register("mixed_forest", new MixedForestSurfaceBuilder(TernarySurfaceConfig::deserialize));
 
 		BASALT_CONFIG = new CliffSurfaceConfig(
 				TerrestriaBlocks.BASALT_GRASS_BLOCK.getDefaultState(),

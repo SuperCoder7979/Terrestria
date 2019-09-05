@@ -44,6 +44,8 @@ public class TerrestriaFeatures {
 	public static CattailFeature CATTAIL;
 	public static FallenLogFeature FALLEN_REDWOOD_LOG;
 	public static FallenLogFeature FALLEN_HEMLOCK_LOG;
+	public static FallenLogFeature FALLEN_OAK_LOG;
+	public static FallenLogFeature FALLEN_SPRUCE_LOG;
 
 	public static VolcanoStructureFeature VOLCANO_STRUCTURE;
 	public static StructurePieceType VOLCANO_PIECE;
@@ -166,6 +168,14 @@ public class TerrestriaFeatures {
 
 		FALLEN_HEMLOCK_LOG = register("fallen_hemlock_log",
 				new FallenLogFeature(DefaultFeatureConfig::deserialize, false, TerrestriaBlocks.HEMLOCK.log.getDefaultState())
+		);
+
+		FALLEN_OAK_LOG = register("fallen_oak_log",
+				new FallenLogFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), 3, 2)
+		);
+
+		FALLEN_SPRUCE_LOG = register("fallen_spruce_log",
+				new FallenLogFeature(DefaultFeatureConfig::deserialize, false, Blocks.SPRUCE_LOG.getDefaultState(), 5, 4)
 		);
 
 		VOLCANO_STRUCTURE = Registry.register(Registry.STRUCTURE_FEATURE, new Identifier(Terrestria.MOD_ID, "volcano"),
