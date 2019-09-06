@@ -32,7 +32,7 @@ public class MixedForestBiomes {
 			.addDefaultFeatures(LAND_CARVERS, STRUCTURES, DUNGEONS, LAKES, PLAINS_TALL_GRASS, MINEABLES, ORES, DISKS,
 				PLAINS_FEATURES, DEFAULT_MUSHROOMS, DEFAULT_VEGETATION, SPRINGS, FROZEN_TOP_LAYER, LARGE_FERNS)
 			.addCustomFeature(GenerationStep.Feature.VEGETAL_DECORATION, Biome.configureFeature(
-				TerrestriaFeatures.CATTAIL, new SeagrassFeatureConfig(80, 0.4D),
+				TerrestriaFeatures.CATTAIL, new SeagrassFeatureConfig(120, 0.5D),
 				Decorator.TOP_SOLID_HEIGHTMAP, DecoratorConfig.DEFAULT))
 			.addStructureFeature(Feature.STRONGHOLD)
 			.addStructureFeature(Feature.MINESHAFT, new MineshaftFeatureConfig(0.004D, MineshaftFeature.Type.NORMAL))
@@ -62,15 +62,15 @@ public class MixedForestBiomes {
 
 		TerrestriaBiomes.MIXED_FOREST_LAKE = TerrestriaBiomes.register("mixed_forest_lake", template.builder()
 			.configureSurfaceBuilder(TerrestriaSurfaces.MIXED_FOREST, SurfaceBuilder.GRASS_SAND_UNDERWATER_CONFIG)
-			.depth(-0.35F)
+			.depth(-0.335F)
 			.scale(0.0F)
 			.build()
 		);
 
 		TerrestriaBiomes.MIXED_FOREST_HILLS = TerrestriaBiomes.register("mixed_forest_hills", template.builder()
 			.configureSurfaceBuilder(TerrestriaSurfaces.MIXED_FOREST.setMaxPodzolAmount(2), SurfaceBuilder.GRASS_CONFIG)
-			.depth(0.4F)
-			.scale(0.3F)
+			.depth(0.5F)
+			.scale(0.4F)
 			.addTreeFeature(Feature.FANCY_TREE, 1)
 			.addTreeFeature(Feature.BIRCH_TREE, 2)
 			.addTreeFeature(Feature.NORMAL_TREE, 4)
@@ -95,5 +95,11 @@ public class MixedForestBiomes {
 			.depth(0F)
 			.scale(0.025F)
 			.build());
+
+		TerrestriaBiomes.MURKY_RIVER = TerrestriaBiomes.register("murky_river", template.builder()
+			.depth(-0.35F)
+			.scale(0.0F)
+			.build()
+		);
 	}
 }

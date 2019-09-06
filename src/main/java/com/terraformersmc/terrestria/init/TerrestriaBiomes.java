@@ -47,6 +47,7 @@ public class TerrestriaBiomes {
 	public static Biome MIXED_FOREST_HILLS;
 	public static Biome MIXED_FOREST_EDGE;
 	public static Biome MIXED_FOREST_BEACH;
+	public static Biome MURKY_RIVER;
 
 	public static void init() {
 

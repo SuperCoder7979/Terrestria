@@ -29,7 +29,7 @@ public class TerrestriaGeneration {
 		addContinentalBiome(REDWOOD_FOREST, OverworldClimate.TEMPERATE, 1.0, "redwood_forest", config);
 		addContinentalBiome(SAKURA_FOREST, OverworldClimate.TEMPERATE, 1.0, "sakura_forest", config);
 		addContinentalBiome(SNOWY_HEMLOCK_FOREST, OverworldClimate.SNOWY, 2.0, "snowy_hemlock_forest", config);
-		addContinentalBiome(MIXED_FOREST, OverworldClimate.TEMPERATE, 20, "mixed_forest", config);
+		addContinentalBiome(MIXED_FOREST, OverworldClimate.TEMPERATE, 1.0, "mixed_forest", config);
 		addBiomeVariant(Biomes.DEEP_OCEAN, VOLCANIC_ISLAND_SHORE, 0.10, "volcanic_island", config);
 
 		if(CALDERA_RIDGE != null) {
@@ -53,6 +53,13 @@ public class TerrestriaGeneration {
 			OverworldBiomes.addShoreBiome(MIXED_FOREST_LAKE, MIXED_FOREST_BEACH, 1.0);
 			OverworldBiomes.addShoreBiome(MIXED_FOREST_HILLS, MIXED_FOREST_BEACH, 1.0);
 			OverworldBiomes.addShoreBiome(MIXED_FOREST_EDGE, MIXED_FOREST_BEACH, 1.0);
+
+			OverworldBiomes.setRiverBiome(MIXED_FOREST, MURKY_RIVER);
+			OverworldBiomes.setRiverBiome(MIXED_FOREST_EDGE, MURKY_RIVER);
+			OverworldBiomes.setRiverBiome(MIXED_FOREST_LAKE, MURKY_RIVER);
+			OverworldBiomes.setRiverBiome(MIXED_FOREST_HILLS, MURKY_RIVER);
+			OverworldBiomes.setRiverBiome(MIXED_FOREST_CLEARING, MURKY_RIVER);
+			OverworldBiomes.setRiverBiome(MURKY_RIVER, null);
 
 			FabricBiomes.addSpawnBiome(MIXED_FOREST);
 		}

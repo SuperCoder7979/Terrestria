@@ -2,6 +2,8 @@ package com.terraformersmc.terrestria.surface;
 
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
@@ -11,8 +13,8 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class MixedForestSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
-	double amountOfPodzolMax = 3;
-	double amountOfPodzolMin = 1;
+	private double amountOfPodzolMax = 3;
+	private double amountOfPodzolMin = 1;
 	public MixedForestSurfaceBuilder(Function<Dynamic<?>, ? extends TernarySurfaceConfig> function_1) {
 		super(function_1);
 	}
