@@ -45,7 +45,7 @@ public class TerrestriaGeneration {
 
 		if (MIXED_FOREST != null) {
 			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_CLEARING, 1.0);
-			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_LAKE, 0.75);
+			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_LAKE, 2.0);
 			OverworldBiomes.addHillsBiome(MIXED_FOREST, MIXED_FOREST_HILLS, 1.5);
 			OverworldBiomes.addEdgeBiome(MIXED_FOREST, MIXED_FOREST_EDGE, 1.0);
 

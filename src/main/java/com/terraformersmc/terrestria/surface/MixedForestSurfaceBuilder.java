@@ -11,18 +11,24 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class MixedForestSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
-	double amountOfPodzol = 2;
+	double amountOfPodzolMax = 3;
+	double amountOfPodzolMin = 1;
 	public MixedForestSurfaceBuilder(Function<Dynamic<?>, ? extends TernarySurfaceConfig> function_1) {
 		super(function_1);
 	}
 
-	public MixedForestSurfaceBuilder setPodzolAmount(double amt) {
-		this.amountOfPodzol = amt;
+	public MixedForestSurfaceBuilder setMaxPodzolAmount(double amt) {
+		this.amountOfPodzolMax = amt;
+		return this;
+	}
+
+	public MixedForestSurfaceBuilder setMinPodzolAmount(double amt) {
+		this.amountOfPodzolMin = amt;
 		return this;
 	}
 
 	public void generate(Random rand, Chunk chunk, Biome biome, int x, int z, int height, double noiseVal, BlockState var9, BlockState var10, int var11, long seed, TernarySurfaceConfig config) {
-		if (noiseVal > amountOfPodzol) {
+		if (noiseVal > amountOfPodzolMin && noiseVal < amountOfPodzolMax) {
 			SurfaceBuilder.DEFAULT.generate(rand, chunk, biome, x, z, height, noiseVal, var9, var10, var11, seed, SurfaceBuilder.PODZOL_CONFIG);
 		} else {
 			SurfaceBuilder.DEFAULT.generate(rand, chunk, biome, x, z, height, noiseVal, var9, var10, var11, seed, SurfaceBuilder.GRASS_CONFIG);
