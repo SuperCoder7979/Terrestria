@@ -44,22 +44,53 @@ public class TerrestriaGeneration {
 
 		if(CYPRESS_FOREST != null) {
 			OverworldBiomes.addHillsBiome(CYPRESS_FOREST, WOODED_CYPRESS_HILLS, 1.0);
+			OverworldBiomes.addHillsBiome(CYPRESS_FOREST, CYPRESS_FOREST_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(CYPRESS_FOREST, CYPRESS_FOREST_LAKE, 1.0);
+			OverworldBiomes.addEdgeBiome(CYPRESS_FOREST, CYPRESS_FOREST_EDGE, 1.0);
 
 			FabricBiomes.addSpawnBiome(CYPRESS_FOREST);
 		}
 
+		if (CYPRESS_SWAMP != null) {
+			OverworldBiomes.addEdgeBiome(CYPRESS_SWAMP, CYPRESS_SWAMP_EDGE, 1.0);
+			OverworldBiomes.addHillsBiome(CYPRESS_SWAMP, CYPRESS_SWAMP_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(CYPRESS_SWAMP, CYPRESS_SWAMP_RUBBER, 0.5);
+			OverworldBiomes.addHillsBiome(CYPRESS_SWAMP, CYPRESS_SWAMP_WILLOW, 0.5);
+
+			OverworldBiomes.setRiverBiome(CYPRESS_SWAMP, SWAMPY_RIVER);
+			OverworldBiomes.setRiverBiome(CYPRESS_SWAMP_EDGE, SWAMPY_RIVER);
+			OverworldBiomes.setRiverBiome(CYPRESS_SWAMP_CLEARING, SWAMPY_RIVER);
+			OverworldBiomes.setRiverBiome(CYPRESS_SWAMP_RUBBER, SWAMPY_RIVER);
+			OverworldBiomes.setRiverBiome(CYPRESS_SWAMP_WILLOW, SWAMPY_RIVER);
+			OverworldBiomes.setRiverBiome(SWAMPY_RIVER, null); //stop the river from having rivers
+		}
+
 		if(DENSE_WOODLANDS != null) {
 			OverworldBiomes.addEdgeBiome(DENSE_WOODLANDS, DENSE_WOODLANDS_EDGE, 1);
+			OverworldBiomes.addHillsBiome(DENSE_WOODLANDS, DENSE_WOODLANDS_CLEARING, 1.0);
 		}
 
 		if(HEMLOCK_RAINFOREST != null) {
 			OverworldBiomes.addHillsBiome(HEMLOCK_RAINFOREST, HEMLOCK_CLEARING, 1.0);
+			OverworldBiomes.addEdgeBiome(HEMLOCK_RAINFOREST, HEMLOCK_EDGE, 1.0);
 
 			FabricBiomes.addSpawnBiome(HEMLOCK_RAINFOREST);
 		}
 
 		if(JAPANESE_MAPLE_FOREST != null) {
 			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_FOREST, WOODED_JAPANESE_MAPLE_HILLS, 1.0);
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_FOREST, JAPANESE_MAPLE_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_FOREST, JAPANESE_MAPLE_LAKE, 1.0);
+			OverworldBiomes.addEdgeBiome(JAPANESE_MAPLE_FOREST, JAPANESE_MAPLE_EDGE, 1.0);
+
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_LIGHT, JAPANESE_MAPLE_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_LIGHT, JAPANESE_MAPLE_LAKE, 1.0);
+
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_DARK, JAPANESE_MAPLE_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(JAPANESE_MAPLE_DARK, JAPANESE_MAPLE_LAKE, 1.0);
+
+			addBiomeVariant(JAPANESE_MAPLE_FOREST, JAPANESE_MAPLE_LIGHT, 0.1, "japanese_maple_light", config);
+			addBiomeVariant(JAPANESE_MAPLE_FOREST, JAPANESE_MAPLE_DARK, 0.1, "japanese_maple_dark", config);
 		}
 
 		if(LUSH_REDWOOD_FOREST != null) {
@@ -72,19 +103,24 @@ public class TerrestriaGeneration {
 		if(RAINBOW_RAINFOREST != null) {
 			OverworldBiomes.addHillsBiome(RAINBOW_RAINFOREST, RAINBOW_RAINFOREST_LAKE, 0.6);
 			OverworldBiomes.addHillsBiome(RAINBOW_RAINFOREST, RAINBOW_RAINFOREST_MOUNTAINS, 1.0);
+			OverworldBiomes.addEdgeBiome(RAINBOW_RAINFOREST, RAINBOW_RAINFOREST_EDGE, 1.0);
 
 			FabricBiomes.addSpawnBiome(RAINBOW_RAINFOREST);
 		}
 
 		if(REDWOOD_FOREST != null) {
 			OverworldBiomes.addHillsBiome(REDWOOD_FOREST, REDWOOD_CLEARING, 1.0);
-			OverworldBiomes.addEdgeBiome(REDWOOD_FOREST, REDWOOD_FOREST_EDGE, 1);
+			OverworldBiomes.addEdgeBiome(REDWOOD_FOREST, REDWOOD_FOREST_EDGE, 1.0);
 
 			FabricBiomes.addSpawnBiome(REDWOOD_FOREST);
 		}
 
 		if(SAKURA_FOREST != null) {
 			OverworldBiomes.addHillsBiome(SAKURA_FOREST, WOODED_SAKURA_HILLS, 1.0);
+			OverworldBiomes.addHillsBiome(SAKURA_FOREST, SAKURA_CLEARING, 1.0);
+			OverworldBiomes.addHillsBiome(SAKURA_FOREST, SAKURA_LAKE, 1.0);
+
+			OverworldBiomes.addEdgeBiome(SAKURA_FOREST, SAKURA_EDGE, 1.0);
 		}
 
 		if(SNOWY_HEMLOCK_FOREST != null) {

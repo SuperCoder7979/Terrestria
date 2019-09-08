@@ -36,6 +36,7 @@ public class TerrestriaFeatures {
 	public static JapaneseMapleTreeFeature JAPANESE_MAPLE_TREE;
 	public static JapaneseMapleShrubFeature JAPANESE_MAPLE_SHRUB;
 	public static JapaneseMapleTreeFeature DARK_JAPANESE_MAPLE_TREE;
+	public static JapaneseMapleShrubFeature OAK_SHRUB;
 	public static RainbowEucalyptusTreeFeature RAINBOW_EUCALYPTUS_TREE;
 	public static JungleTreeFeature SMALL_RAINBOW_EUCALYPTUS_TREE;
 	public static PalmTreeFeature JUNGLE_PALM_TREE;
@@ -44,6 +45,7 @@ public class TerrestriaFeatures {
 	public static CattailFeature CATTAIL;
 	public static FallenLogFeature FALLEN_REDWOOD_LOG;
 	public static FallenLogFeature FALLEN_HEMLOCK_LOG;
+	public static FallenLogFeature FALLEN_OAK_LOG;
 
 	public static VolcanoStructureFeature VOLCANO_STRUCTURE;
 	public static StructurePieceType VOLCANO_PIECE;
@@ -168,6 +170,10 @@ public class TerrestriaFeatures {
 				new FallenLogFeature(DefaultFeatureConfig::deserialize, false, TerrestriaBlocks.HEMLOCK.log.getDefaultState())
 		);
 
+		FALLEN_OAK_LOG = register("fallen_oak_log",
+				new FallenLogFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), 4, 3)
+		);
+
 		VOLCANO_STRUCTURE = Registry.register(Registry.STRUCTURE_FEATURE, new Identifier(Terrestria.MOD_ID, "volcano"),
 				new VolcanoStructureFeature(DefaultFeatureConfig::deserialize)
 		);
@@ -175,6 +181,15 @@ public class TerrestriaFeatures {
 		Feature.STRUCTURES.put("Volcano", VOLCANO_STRUCTURE);
 
 		VOLCANO_PIECE = Registry.register(Registry.STRUCTURE_PIECE, new Identifier(Terrestria.MOD_ID, "volcano"), VolcanoGenerator::new);
+
+		TreeDefinition.Basic oakShrub = new TreeDefinition.Basic(
+			Blocks.OAK_LOG.getDefaultState(),
+			Blocks.OAK_LEAVES.getDefaultState()
+		);
+
+		OAK_SHRUB = register("oak_shrub",
+			new JapaneseMapleShrubFeature(DefaultFeatureConfig::deserialize, false, oakShrub)
+		);
 	}
 
 	public static <T extends Feature<FC>, FC extends FeatureConfig> T register(String name, T feature) {

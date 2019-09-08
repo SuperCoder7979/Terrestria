@@ -50,5 +50,14 @@ public class HemlockRainforestBiomes {
 				.addTreeFeature(TerrestriaFeatures.FALLEN_HEMLOCK_LOG, 4)
 				.addTreeFeature(TerrestriaFeatures.TINY_HEMLOCK_TREE, 1)
 				.build());
+
+		TerrestriaBiomes.HEMLOCK_EDGE = TerrestriaBiomes.register("hemlock_edge", template.builder()
+			.depth(0.65F)
+			.scale(0.35F)
+			.addTreeFeature(TerrestriaFeatures.MEGA_HEMLOCK_TREE, 2)
+			.addTreeFeature(TerrestriaFeatures.HEMLOCK_TREE, 2)
+			.addTreeFeature(TerrestriaFeatures.FALLEN_HEMLOCK_LOG, 1)
+			.addTreeFeature(TerrestriaFeatures.TINY_HEMLOCK_TREE, 1)
+			.build());
 	}
 }
